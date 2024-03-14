@@ -28,7 +28,7 @@ function validateBookUpdate(book, oldBook) {
     if(book.id !== oldBook.id) {
         errors.set("id", "ID cannot be changed");
     }
-    return [errors, errors.size > 0];
+    return [Object.fromEntries(errors), errors.size > 0];
 }
 
 

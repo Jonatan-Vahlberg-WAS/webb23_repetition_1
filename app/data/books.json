@@ -1,1 +1,79 @@
-[]
+[
+  {
+    "title": "Peter Pan: Full Color",
+    "count": 1,
+    "author": {
+      "name": "J. M Barrie",
+      "id": "907b7cfd"
+    },
+    "description": "J. M. Barrie's classic children's story is reimagined in this delightful full-color deluxe edition filled with all-new illustrations and ten removable features specially",
+    "isbn": 9780062362223,
+    "genres": [
+      "english",
+      "fantasy",
+      "children"
+    ],
+    "id": "21b82f28"
+  },
+  {
+    "title": "Shadows Over Innsmouth",
+    "count": 5,
+    "author": {
+      "name": "H. P. Lovecraft",
+      "id": "ahidhijsabhjib"
+    },
+    "description": "This anthology features seventeen chilling stories by authors such as Neil Gaiman, Ramsey Campbell and Kim Newman, as well as the original masterpiece of horror.",
+    "isbn": 9781781165287,
+    "genres": [
+      "english",
+      "fantasy",
+      "horror"
+    ],
+    "id": "dc88bd1c"
+  },
+  {
+    "title": "The Hobbit",
+    "count": 5,
+    "author": {
+      "name": "J. R. R. Tolkien",
+      "id": "a9d8f7a91"
+    },
+    "description": "The Hobbit is a tale of high adventure, undertaken by a company of dwarves in search of dragon-guarded gold. A reluctant partner in this perilous quest is Bilbo Baggins, a comfort-loving unambitious hobbit.",
+    "isbn": 9780547928227,
+    "genres": [
+      "english",
+      "fantasy"
+    ],
+    "id": "dc88bd1c3431"
+  },
+  {
+    "title": "The Lord of the Rings",
+    "count": 5,
+    "author": {
+      "name": "J. R. R. Tolkien",
+      "id": "a9d8f7a91"
+    },
+    "description": "The Lord of the Rings tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizard; the hobbits Merry, Pippin, and Sam; Gimli the Dwarf; Legolas the Elf; Boromir of Gondor; and a tall, mysterious stranger called Strider.",
+    "isbn": 9780547928210,
+    "genres": [
+      "english",
+      "fantasy"
+    ],
+    "id": "dc88bd1c3443"
+  },
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "count": 5,
+    "author": {
+      "name": "J. K. Rowling",
+      "id": "a9d8f7a92"
+    },
+    "description": "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle.",
+    "isbn": 9781408855652,
+    "genres": [
+      "english",
+      "fantasy"
+    ],
+    "id": "dc88bd1c123"
+  }
+]

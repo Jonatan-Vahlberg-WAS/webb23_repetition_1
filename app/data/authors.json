@@ -3,5 +3,20 @@
     "name": "HP Lovecraft",
     "yearOfBirth": 1914,
     "id": "ahidhijsabhjib"
+  },
+  {
+    "name": "J. M Barrie",
+    "yearOfBirth": 1860,
+    "id": "907b7cfd"
+  },
+  {
+    "name": "J. R. R. Tolkien",
+    "yearOfBirth": 1892,
+    "id": "a9d8f7a91"
+  },
+  {
+    "name": "J. K. Rowling",
+    "yearOfBirth": 1965,
+    "id": "a9d8f7a92"
   }
 ]
