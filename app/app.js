@@ -17,7 +17,7 @@ app.use(cors({
 }));
 
 
-app.use('api/v1/authors', authorRouter);
+app.use('/api/v1/authors', authorRouter);
 //TODO: add book routes here
 
 
