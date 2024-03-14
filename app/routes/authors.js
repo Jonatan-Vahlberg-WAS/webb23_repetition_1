@@ -4,6 +4,7 @@ const {
   generateUniqueId,
   writeDatabaseFile,
 } = require("../utils/database");
+const { validateAuthor } = require("../utils/validation/authors");
 
 const authorDatabasePath = "./app/data/authors.json";
 
@@ -47,10 +48,15 @@ router.post("/", async (req, res) => {
   try {
     let newAuthor = req.body;
     newAuthor.id = generateUniqueId();
-    //TODO: validation
+    const [errors, hasErrors] = validateAuthor(newAuthor);
+    if (hasErrors) {
+      return res.status(400).json({
+        errors,
+      });
+    }
     let authors = (await readDatabaseFile(authorDatabasePath)) || [];
     authors.push(newAuthor);
-    await writeDatabaseFile(authors);
+    await writeDatabaseFile(authorDatabasePath, authors);
     res.json(newAuthor);
   } catch (error) {
     console.log("error: creating author", error.message);

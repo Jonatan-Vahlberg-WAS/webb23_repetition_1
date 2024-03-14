@@ -1,5 +1,12 @@
-[{
+[
+  {
     "name": "HP Lovecraft",
     "yearOfBirth": 1914,
     "id": "ahidhijsabhjib"
-}]
+  },
+  {
+    "name": "HP Lovecraft 2",
+    "yearOfBirth": 1914,
+    "id": "8091ec2c"
+  }
+]

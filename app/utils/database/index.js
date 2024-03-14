@@ -8,7 +8,6 @@ async function readDatabaseFile(path) {
   try {
     const response = await fs.readFile(path, "utf-8");
     const data = JSON.parse(response);
-    console.log("DATA", data);
     return data;
   } catch (error) {
     throw new Error(error);
@@ -22,14 +21,13 @@ async function writeDatabaseFile(path, data) {
   try {
     const stringifiedData = JSON.stringify(data, null, 2);
     await fs.writeFile(path, stringifiedData, "utf-8");
-    console.log("OK");
   } catch (error) {
     throw new Error(error);
   }
 }
 
 function generateUniqueId() {
-    return uuid.v4()
+    return uuid.v4().slice(0, 8);
 }
 
 module.exports = {
