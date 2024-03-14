@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cors({
 
 
 app.use('/api/v1/authors', authorRouter);
+app.use('/api/v1/books', bookRouter);
 
 //TODO: add book routes here
 
