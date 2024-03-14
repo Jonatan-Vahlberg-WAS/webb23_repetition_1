@@ -1,10 +1,20 @@
 const { Router } = require("express");
+const { readDatabaseFile } = require("../utils/database");
+
+const authorDatabasePath = "./app/data/authors.json"
 
 const router = Router();
 
-router.get("/", (req, res) => {
-    //TODO: add get authors logic here
-    res.status(404).send("Not implemented")
+router.get("/", async (req, res) => {
+    try {
+        const authors = await readDatabaseFile(authorDatabasePath);
+        res.json(authors)
+    } catch (error) {
+        console.log("error: getting authors", error.message)
+        res.status(500).json({
+            message: error.message
+        })
+    }
 });
 
 router.get("/:id", (req, res) => {
