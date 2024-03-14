@@ -10,6 +10,7 @@ const {
 } = require("../utils/validation/authors");
 
 const authorDatabasePath = "./app/data/authors.json";
+const bookDatabasePath = "./app/data/books.json";
 
 const router = Router();
 
@@ -89,7 +90,17 @@ router.put("/:id", async (req, res) => {
       });
     }
 
+    if (authors[authorIndex].name !== newAuthor.name) {
+      let books = (await readDatabaseFile(bookDatabasePath)) || [];
+      books.forEach((book) => {
+        if (book.author.name === authors[authorIndex].name) {
+          book.author.name = newAuthor.name;
+        }
+      });
+      await writeDatabaseFile(bookDatabasePath, books);
+    }
     authors[authorIndex] = newAuthor;
+
     await writeDatabaseFile(authorDatabasePath, authors);
     res.json(newAuthor);
   } catch (error) {

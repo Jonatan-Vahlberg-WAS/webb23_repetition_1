@@ -64,6 +64,11 @@ router.post("/", async (req, res) => {
       });
     }
     let books = (await readDatabaseFile(bookDatabasePath)) || [];
+    if (books.some(book => book.isbn === newBook.isbn)) {
+      return res.status(409).json({
+        message: "Book with this ISBN already exists",
+      });
+    }
     books.push(newBook);
     await writeDatabaseFile(bookDatabasePath, books);
     res.json(newBook);
