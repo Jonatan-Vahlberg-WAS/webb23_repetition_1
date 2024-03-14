@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "866044d2-63fe-4064-959b-babf342a2d7f",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10403514"
+	},
+	"item": [
+		{
+			"name": "authors",
+			"item": [
+				{
+					"name": "authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/authors/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/authors/8091ec2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"8091ec2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "author",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"J. M Barrie\",\n    \"yearOfBirth\": 1860,\n    \"id\": \"907b7cfd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/authors/907b7cfd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"907b7cfd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "author",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/authors/8091ec2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"8091ec2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"name\": \"J. M Barrie\",\n        \"yearOfBirth\": 1860 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/authors/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/21b82f28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"21b82f28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Peter Pan: Full Color\",\n    \"count\": 5,\n    \"author\": {\n        \"name\": \"J. M Barrie\",\n        \"id\": \"907b7cfd\"\n    },\n    \"description\": \"J. M. Barrie's classic children's story is reimagined in this delightful full-color deluxe edition filled with all-new illustrations and ten removable features specially\",\n    \"isbn\": 9780062362223,\n    \"genres\": [\"english\", \"fantasy\", \"children\"],\n    \"id\": \"21b82f28\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/21b82f28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"21b82f28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book loan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/21b82f28/loan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"21b82f28",
+								"loan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book return",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Peter Pan: Full Color\",\n    \"count\": 5,\n    \"author\": {\n        \"name\": \"J. M Barrie\",\n        \"id\": \"907b7cfd\"\n    },\n    \"description\": \"J. M. Barrie's classic children's story is reimagined in this delightful full-color deluxe edition filled with all-new illustrations and ten removable features specially\",\n    \"isbn\": 9780062362223,\n    \"genres\": [\"english\", \"fantasy\", \"children\"],\n    \"id\": \"21b82f28\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/21b82f28/return",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"21b82f28",
+								"return"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/8091ec2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"8091ec2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Shadows Over Innsmouth\",\n    \"count\": 5,\n    \"author\": {\n        \"name\": \"H. P. Lovecraft\",\n        \"id\": \"ahidhijsabhjib\"\n    },\n    \"description\": \"This anthology features seventeen chilling stories by authors such as Neil Gaiman, Ramsey Campbell and Kim Newman, as well as the original masterpiece of horror.\",\n    \"isbn\": 9781781165287,\n    \"genres\": [\"english\", \"fantasy\", \"horror\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/?genre=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get book by ISBN (External)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://openlibrary.org/isbn/9780140328721.json",
+							"protocol": "https",
+							"host": [
+								"openlibrary",
+								"org"
+							],
+							"path": [
+								"isbn",
+								"9780140328721.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cover by COVER_ID (External)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://covers.openlibrary.org/b/id/8739161-M.jpg",
+							"protocol": "https",
+							"host": [
+								"covers",
+								"openlibrary",
+								"org"
+							],
+							"path": [
+								"b",
+								"id",
+								"8739161-M.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books by genre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/?genre=horror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "horror"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books by author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/?author=J. M Barrie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "J. M Barrie"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books by genre sorted by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/?genre=fantasy&sortby=title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "fantasy"
+								},
+								{
+									"key": "sortby",
+									"value": "title"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -13,7 +13,8 @@
       "fantasy",
       "children"
     ],
-    "id": "21b82f28"
+    "id": "21b82f28",
+    "cover": "https://covers.openlibrary.org/b/id/10306322-M.jpg"
   },
   {
     "title": "Shadows Over Innsmouth",
@@ -29,7 +30,8 @@
       "fantasy",
       "horror"
     ],
-    "id": "dc88bd1c"
+    "id": "dc88bd1c",
+    "cover": "https://covers.openlibrary.org/b/id/8762165-M.jpg"
   },
   {
     "title": "The Hobbit",
@@ -44,7 +46,8 @@
       "english",
       "fantasy"
     ],
-    "id": "dc88bd1c3431"
+    "id": "dc88bd1c3431",
+    "cover": "https://covers.openlibrary.org/b/id/12003329-M.jpg"
   },
   {
     "title": "The Lord of the Rings",
@@ -59,7 +62,8 @@
       "english",
       "fantasy"
     ],
-    "id": "dc88bd1c3443"
+    "id": "dc88bd1c3443",
+    "cover": "https://covers.openlibrary.org/b/id/12373902-M.jpg"
   },
   {
     "title": "Harry Potter and the Philosopher's Stone",
@@ -74,6 +78,7 @@
       "english",
       "fantasy"
     ],
-    "id": "dc88bd1c123"
+    "id": "dc88bd1c123",
+    "cover": "https://covers.openlibrary.org/b/id/8535565-M.jpg"
   }
 ]
