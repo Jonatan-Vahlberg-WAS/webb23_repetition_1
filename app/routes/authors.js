@@ -4,7 +4,10 @@ const {
   generateUniqueId,
   writeDatabaseFile,
 } = require("../utils/database");
-const { validateAuthor } = require("../utils/validation/authors");
+const {
+  validateAuthor,
+  validateAuthorUpdate,
+} = require("../utils/validation/authors");
 
 const authorDatabasePath = "./app/data/authors.json";
 
@@ -71,16 +74,23 @@ router.put("/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const newAuthor = req.body;
-    //TODO: validation
+    const [errors, hasErrors] = validateAuthorUpdate(newAuthor, { id });
+    if (hasErrors) {
+      return res.status(400).json({
+        errors,
+      });
+    }
     let authors = (await readDatabaseFile(authorDatabasePath)) || [];
     const authorIndex = authors.findIndex((author) => author.id == id);
+
     if (authorIndex === -1) {
       return res.status(404).json({
         message: "Author not found",
       });
     }
+
     authors[authorIndex] = newAuthor;
-    await writeDatabaseFile(authors);
+    await writeDatabaseFile(authorDatabasePath, authors);
     res.json(newAuthor);
   } catch (error) {
     console.log("error: updating author", error.message);
@@ -103,10 +113,8 @@ router.delete("/:id", async (req, res) => {
     }
     authors.splice(authorIndex, 1);
 
-    await writeDatabaseFile(authors);
-    res.json({
-      message: "Author deleted successfully",
-    });
+    await writeDatabaseFile(authorDatabasePath, authors);
+    res.status(204).end();
   } catch (error) {
     console.log("error: deleting author", error.message);
     // Should be inacessible
