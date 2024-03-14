@@ -1,4 +1,5 @@
 const fs = require("fs/promises");
+const uuid = require("uuid")
 
 async function readDatabaseFile(path) {
   if (!path) {
@@ -27,7 +28,12 @@ async function writeDatabaseFile(path, data) {
   }
 }
 
+function generateUniqueId() {
+    return uuid.v4()
+}
+
 module.exports = {
   readDatabaseFile,
   writeDatabaseFile,
+  generateUniqueId,
 };
