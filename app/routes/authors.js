@@ -1,5 +1,9 @@
 const { Router } = require("express");
-const { readDatabaseFile, generateUniqueId, writeDatabaseFile } = require("../utils/database");
+const {
+  readDatabaseFile,
+  generateUniqueId,
+  writeDatabaseFile,
+} = require("../utils/database");
 
 const authorDatabasePath = "./app/data/authors.json";
 
@@ -31,7 +35,7 @@ router.get("/:id", async (req, res) => {
     }
     res.json(author);
   } catch (error) {
-    console.log("error: getting authors", error.message);
+    console.log("error: getting author", error.message);
     // Should be inacessible
     res.status(500).json({
       message: error.message,
@@ -40,14 +44,14 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-    try {
-        let newAuthor = req.body;
-        newAuthor.id = generateUniqueId()
-        //TODO: validation
-        let authors = await readDatabaseFile(authorDatabasePath) || [];
-        authors.push(newAuthor)
-        await writeDatabaseFile(authors)
-        res.json(newAuthor);
+  try {
+    let newAuthor = req.body;
+    newAuthor.id = generateUniqueId();
+    //TODO: validation
+    let authors = (await readDatabaseFile(authorDatabasePath)) || [];
+    authors.push(newAuthor);
+    await writeDatabaseFile(authors);
+    res.json(newAuthor);
   } catch (error) {
     console.log("error: creating author", error.message);
     // Should be inacessible
@@ -57,14 +61,53 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
-  //TODO: add update author logic here
-  res.status(404).send("Not implemented");
+router.put("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const newAuthor = req.body;
+    //TODO: validation
+    let authors = (await readDatabaseFile(authorDatabasePath)) || [];
+    const authorIndex = authors.findIndex((author) => author.id == id);
+    if (authorIndex === -1) {
+      return res.status(404).json({
+        message: "Author not found",
+      });
+    }
+    authors[authorIndex] = newAuthor;
+    await writeDatabaseFile(authors);
+    res.json(newAuthor);
+  } catch (error) {
+    console.log("error: updating author", error.message);
+    // Should be inacessible
+    res.status(500).json({
+      message: error.message,
+    });
+  }
 });
 
-router.delete("/:id", (req, res) => {
-  //TODO: add delete authors logic here
-  res.status(404).send("Not implemented");
+router.delete("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    let authors = (await readDatabaseFile(authorDatabasePath)) || [];
+    const authorIndex = authors.findIndex((author) => author.id == id);
+    if (authorIndex === -1) {
+      return res.status(404).json({
+        message: "Author not found",
+      });
+    }
+    authors.splice(authorIndex, 1);
+
+    await writeDatabaseFile(authors);
+    res.json({
+      message: "Author deleted successfully",
+    });
+  } catch (error) {
+    console.log("error: deleting author", error.message);
+    // Should be inacessible
+    res.status(500).json({
+      message: error.message,
+    });
+  }
 });
 
 module.exports = router;
